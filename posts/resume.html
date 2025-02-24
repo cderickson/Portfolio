@@ -38,21 +38,6 @@
 				color: white;
 				cursor: pointer;
 			}
-	
-			.row {
-				display: flex;
-				align-items: center;
-				gap: 10px;
-			}
-	
-			.image img {
-				cursor: pointer;
-				transition: transform 0.2s;
-			}
-	
-			.image img:hover {
-				transform: scale(1.05);
-			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -278,13 +263,22 @@
 									</p>
 									<div class="row" style="display: flex; align-items: center;">
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" onclick="openModal(this)" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" 
+												style="cursor: pointer; transition: transform 0.2s;" 
+												onmouseover="this.style.transform='scale(1.05)'" 
+												onmouseout="this.style.transform='scale(1)'" onclick="openModal(this)" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" onclick="openModal(this)" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" 
+												style="cursor: pointer; transition: transform 0.2s;" 
+												onmouseover="this.style.transform='scale(1.05)'" 
+												onmouseout="this.style.transform='scale(1)'" onclick="openModal(this)" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" onclick="openModal(this)" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" 
+												style="cursor: pointer; transition: transform 0.2s;" 
+												onmouseover="this.style.transform='scale(1.05)'" 
+												onmouseout="this.style.transform='scale(1)'" onclick="openModal(this)" /></span>
 										</div>
 									</div>
 
