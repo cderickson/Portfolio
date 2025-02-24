@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Editorial by HTML5 UP</title>
+		<title>API.VintageData.IO - Chris Erickson</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -22,43 +22,43 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="../index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+									<a href="../index.html" class="logo"><strong>Project Portfolio</strong> by Chris Erickson</a>
 									<ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+										<li><a href="#" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
 									</ul>
 								</header>
 
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Generic</h1>
+										<h1>API.VintageData.IO</h1>
 									</header>
 
 									<span class="image main"><img src="../images/pic11.jpg" alt="" /></span>
 
 									<p>This project is an ETL (Extract, Transform, Load) pipeline designed to process match results for Vintage tournaments on Magic Online (MTGO).</p>
+									<p><a href="https://github.com/cderickson/API.VintageData.IO"><b>GitHub Repository</b></a></p>
 
 									<hr class="major" />
 
 									<h2>Process</h2>
 									<ul>
-										<li>Extract data from a publicly maintained Google Sheet.</li>
-										<li>Clean & Transform tournament results, matchups, and deck information.</li>
-										<li>Load structured data into a PostgreSQL database.</li>
-										<li>Deploy a public REST API for querying match results and event information.</li>
+										<li><b><u>Extract</u></b> data from a publicly maintained Google Sheet.</li>
+										<li><b><u>Clean</u></b> & Transform tournament results, matchups, and deck information.</li>
+										<li><b><u>Load</u></b> structured data into a PostgreSQL database.</li>
+										<li><b><u>Deploy</u></b> a public REST API for querying match results and event information.</li>
 									</ul>
 
-									<p>The ETL code is stored as a Python script and scheduled to run weekly using cron on an EC2 instance. The script pulls data from a public Google Sheet, cleans and transforms it, and then loads it into a PostgreSQL database hosted on Amazon RDS.</p>
+									<p>The ETL code is stored as a <b>Python</b> script and scheduled to run weekly using <b>cron</b> on an <b>EC2 instance</b>. The script pulls data from a public Google Sheet, cleans and transforms it, and then loads it into a PostgreSQL database hosted on Amazon RDS.</p>
 
 									<hr class="major" />
 
 									<h2>Data Source</h2>
-									<p><a href="https://docs.google.com/spreadsheets/d/1wxR3iYna86qrdViwHjUPzHuw6bCNeMLb72M25hpUHYk/edit?gid=1611466830#gid=1611466830"></a><b>Google Sheet Link</b></p>
-									<p>Community-collated tournament results, matchups, and deck archetypes.</p>
+									<p><a href="https://docs.google.com/spreadsheets/d/1wxR3iYna86qrdViwHjUPzHuw6bCNeMLb72M25hpUHYk/edit?gid=1611466830#gid=1611466830"><b>Vintage MTGO Metagame</b></a>: Public Google Sheet with community-collated tournament results, matchups, and deck archetypes.</p>
 									
 									<hr class="major" />
 
@@ -80,40 +80,41 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td>EVENTS</td>
+													<td><b>EVENTS</b></td>
 													<td>Captures individual tournament events.</td>
 												</tr>
 												<tr>
-													<td>EVENT_REJECTIONS</td>
+													<td><b>EVENT_REJECTIONS</b></td>
 													<td>Tracks rejected events and reason text.</td>
 												</tr>
 												<tr>
-													<td>MATCHES</td>
+													<td><b>MATCHES</b></td>
 													<td>Stores match results, player deck IDs, and outcomes.</td>
 												</tr>
 												<tr>
-													<td>MATCH_REJECTIONS</td>
+													<td><b>MATCH_REJECTIONS</b></td>
 													<td>Tracks rejected matches and reason text.</td>
 												</tr>
 												<tr>
-													<td>VALID_DECKS</td>
+													<td><b>VALID_DECKS</b></td>
 													<td>Classification table storing valid deck archetypes.</td>
 												</tr>
 												<tr>
-													<td>VALID_EVENT_TYPES</td>
+													<td><b>VALID_EVENT_TYPES</b></td>
 													<td>Classification table containing valid event type names.</td>
 												</tr>
 												<tr>
-													<td>LOAD_REPORTS</td>
+													<td><b>LOAD_REPORTS</b></td>
 													<td>Logs ETL process execution details.</td>
 												</tr>
 												<tr>
-													<td>API_LOGGING_STATS</td>
+													<td><b>API_LOGGING_STATS</b></td>
 													<td>Logs API endpoint usage statistics.</td>
 												</tr>
 											</tbody>
 										</table>
 									</div>
+									<br>
 									<p>See <b><u><a href="https://github.com/cderickson/Vintage-Metagame-API/wiki/Data-Dictionary">Data Dictionary</a></u></b> for feature definitions.</p>
 
 									<h2>API Development</h2>
