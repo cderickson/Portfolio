@@ -5,6 +5,55 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<style>
+			/* Modal Styles */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1000;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.8);
+			}
+	
+			.modal-content {
+				display: block;
+				max-width: 90%;
+				max-height: 90%;
+				margin: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			}
+	
+			.close {
+				position: absolute;
+				top: 20px;
+				right: 30px;
+				font-size: 30px;
+				color: white;
+				cursor: pointer;
+			}
+	
+			.row {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+	
+			.image img {
+				cursor: pointer;
+				transition: transform 0.2s;
+			}
+	
+			.image img:hover {
+				transform: scale(1.05);
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -229,14 +278,20 @@
 									</p>
 									<div class="row" style="display: flex; align-items: center;">
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" onclick="openModal(this)" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" onclick="openModal(this)" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" onclick="openModal(this)" /></span>
 										</div>
+									</div>
+
+									<!-- Modal -->
+									<div id="imageModal" class="modal">
+										<span class="close" onclick="closeModal()">&times;</span>
+										<img class="modal-content" id="modalImg">
 									</div>
 									<!-- <h3>MTGO-DB</h3>
 									<div class="row" style="display: flex; align-items: center;">
@@ -358,6 +413,19 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script>
+				function openModal(imgElement) {
+					let modal = document.getElementById("imageModal");
+					let modalImg = document.getElementById("modalImg");
+		
+					modal.style.display = "block";
+					modalImg.src = imgElement.src;
+				}
+		
+				function closeModal() {
+					document.getElementById("imageModal").style.display = "none";
+				}
+			</script>
 
 	</body>
 </html>
