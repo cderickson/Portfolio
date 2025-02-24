@@ -35,94 +35,25 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>API.VintageData.IO</h1>
+										<h1>MTGO-Tracker</h1>
 									</header>
 
 									<span class="image main"><img src="../images/pic11.jpg" alt="" /></span>
 
-									<p>This project is an ETL (Extract, Transform, Load) pipeline designed to process match results for Vintage tournaments on Magic Online (MTGO).</p>
-									<p>See <b><u><a href="https://github.com/cderickson/API.VintageData.IO">GitHub Repository</a></u></b>.</p>
-
-									<hr class="major" />
-
-									<h2>Process</h2>
+									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Tracker">GitHub Repository</a></u></b>.</p>
+									<p>MTGO-Tracker is an <b><u>analytics tool</u></b> used to process raw data for Magic: the Gathering Online. Players can import and parse log files created during online play and store resulting information into a local database for self-analysis.</p>
+									<p>Five (5) tables are created:</p>
 									<ul>
-										<li><b><u>Extract</u></b> data from a publicly maintained Google Sheet.</li>
-										<li><b><u>Clean & Transform</u></b> tournament results, matchups, and deck information.</li>
-										<li><b><u>Load</u></b> structured data into a PostgreSQL database.</li>
-										<li><b><u>Deploy</u></b> a public REST API for querying match results and event information.</li>
+										<li>Matches</li>
+										<li>Games</li>
+										<li>Plays</li>
+										<li>Drafts</li>
+										<li>Draft Picks</li>
 									</ul>
-
-									<p>The ETL code is stored as a <b>Python</b> script and scheduled to run weekly using <b>cron</b> on an <b>EC2 instance</b>. The script pulls data from a public Google Sheet, cleans and transforms it, and then loads it into a <b>PostgreSQL</b> database hosted on <b>Amazon RDS</b>.</p>
-
-									<hr class="major" />
-
-									<h2>Data Source</h2>								
-									<p><b><u><a href="https://docs.google.com/spreadsheets/d/1wxR3iYna86qrdViwHjUPzHuw6bCNeMLb72M25hpUHYk/edit?gid=1611466830#gid=1611466830">MTGO Vintage Metagame Data</a></u></b>: Public Google Sheet with community-collated tournament results, matchups, and deck archetypes.</p>
-									
-									<hr class="major" />
-
-									<h2>Architecture</h2>
-									<p>This project is deployed in <b>AWS</b> using an <b>EC2</b> instance and <b>Amazon RDS</b> (<b>PostgreSQL</b>) database.</p>
-									<p>Google Sheets → Python ETL Script (EC2) → PostgreSQL (RDS) → REST API (EC2, Flask) → Nginx & Gunicorn → Users</p>
-
-									<hr class="major" />
-
-									<h2>Database Schema</h2>
-									<p>The data is loaded into a <b>PostgreSQL</b> database with the following tables:</p>
-									<div class="table-wrapper" style="display: flex; justify-content: center;">
-										<table style="margin: 0 auto;">
-											<thead>
-												<tr>
-													<th>Table Name</th>
-													<th>Description</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><b>EVENTS</b></td>
-													<td>Captures individual tournament events.</td>
-												</tr>
-												<tr>
-													<td><b>EVENT_REJECTIONS</b></td>
-													<td>Tracks rejected events and reason text.</td>
-												</tr>
-												<tr>
-													<td><b>MATCHES</b></td>
-													<td>Stores match results, player deck IDs, and outcomes.</td>
-												</tr>
-												<tr>
-													<td><b>MATCH_REJECTIONS</b></td>
-													<td>Tracks rejected matches and reason text.</td>
-												</tr>
-												<tr>
-													<td><b>VALID_DECKS</b></td>
-													<td>Classification table storing valid deck archetypes.</td>
-												</tr>
-												<tr>
-													<td><b>VALID_EVENT_TYPES</b></td>
-													<td>Classification table containing valid event type names.</td>
-												</tr>
-												<tr>
-													<td><b>LOAD_REPORTS</b></td>
-													<td>Logs ETL process execution details.</td>
-												</tr>
-												<tr>
-													<td><b>API_LOGGING_STATS</b></td>
-													<td>Logs API endpoint usage statistics.</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+									<p>These tables will help you track your results, evaluate your performance, and analyze your play patterns.</p>
 									<br>
-									<p>See <b><u><a href="https://github.com/cderickson/Vintage-Metagame-API/wiki/Data-Dictionary">Data Dictionary</a></u></b> for feature definitions.</p>
-
-									<h2>API Development</h2>
-									<p>A <b>REST API</b> was developed using <b>Flask</b> and deployed using an <b>EC2 instance</b>, which is configured to serve requests through <b>Nginx</b> and <b>Gunicorn</b>. The API provides HTTP endpoints for querying processed match results and event data.</p>
-									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Vintage-Metagame-Data/wiki/API-Documentation">API Documentation</a></u></b> for API Endpoint usage instructions.</p>
-
 									<p align="center">
-										<img src="https://github.com/cderickson/MTGO-Vintage-Metagame-Data/blob/main/api.png?raw=true">
+										<img src="https://github.com/cderickson/MTGO-Tracker/blob/main/readme_img.PNG?raw=true">
 									</p>
 
 								</section>
