@@ -1,0 +1,606 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>API.VintageData.IO - Data Dictionary</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>API.VintageData.IO</strong> by Chris Erickson</a>
+									<ul class="icons">
+										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/cderickson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.instagram.com/chriserickson04/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://old.reddit.com/user/Sundodger04/" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Data Dictionary</h1>
+									</header>
+
+									<h2>EVENTS</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EVENT_ID</td>
+												<td>BIGINT</td>
+												<td>Unique event identifier.</td>
+											</tr>
+											<tr>
+												<td>EVENT_DATE</td>
+												<td>DATE</td>
+												<td>Date event took place.</td>
+											</tr>
+											<tr>
+												<td>EVENT_TYPE_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing event information from VALID_EVENT_TYPES.</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which record was processed.</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>EVENT_REJECTIONS</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EVENT_REJ_ID</td>
+												<td>BIGINT</td>
+												<td>Unique event rejection identifier.</td>
+											</tr>
+											<tr>
+												<td>LOAD_RPT_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing load report from LOAD_REPORTS.</td>
+											</tr>
+											<tr>
+												<td>EVENT_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing event from EVENTS.</td>
+											</tr>
+											<tr>
+												<td>EVENT_DATE</td>
+												<td>DATE</td>
+												<td>Date of the rejected event.</td>
+											</tr>
+											<tr>
+												<td>EVENT_TYPE_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing event type from VALID_EVENT_TYPES.</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which record was processed.</td>
+											</tr>
+											<tr>
+												<td>REJ_TYPE</td>
+												<td>VARCHAR(1)</td>
+												<td>Type of rejection. (W = Warning, E = Error)</td>
+											</tr>
+											<tr>
+												<td>EVENT_REJ_TEXT</td>
+												<td>VARCHAR(30)</td>
+												<td>Rejection reason text.</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>MATCHES</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>MATCH_ID</td>
+												<td>BIGINT</td>
+												<td>Unique match identifier</td>
+											</tr>
+											<tr>
+												<td>P1</td>
+												<td>VARCHAR(30)</td>
+												<td>Player 1 Username.</td>
+											</tr>
+											<tr>
+												<td>P2</td>
+												<td>VARCHAR(30)</td>
+												<td>Player 2 Username.</td>
+											</tr>
+											<tr>
+												<td>P1_WINS</td>
+												<td>INT</td>
+												<td>Number of game wins by Player 1.</td>
+											</tr>
+											<tr>
+												<td>P2_WINS</td>
+												<td>INT</td>
+												<td>Number of game wins by Player 2.</td>
+											</tr>
+											<tr>
+												<td>MATCH_WINNER</td>
+												<td>VARCHAR(2)</td>
+												<td>Winner of the match (P1 or P2).</td>
+											</tr>
+											<tr>
+												<td>P1_DECK_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing Player 1's deck information from VALID_DECKS.</td>
+											</tr>
+											<tr>
+												<td>P2_DECK_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing Player 2's deck information from VALID_DECKS.</td>
+											</tr>
+											<tr>
+												<td>P1_NOTE</td>
+												<td>VARCHAR(100)</td>
+												<td>Additional Notes for Player 1.</td>
+											</tr>
+											<tr>
+												<td>P2_NOTE</td>
+												<td>VARCHAR(100)</td>
+												<td>Additional Notes for Player 2.</td>
+											</tr>
+											<tr>
+												<td>EVENT_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing event information from EVENTS.</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which record was processed.</td>
+											</tr>
+										</tbody>
+									</table>									
+									<h2>MATCH_REJECTIONS</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>MATCH_REJ_ID</td>
+												<td>BIGINT</td>
+												<td>Unique match rejection identifier.</td>
+											</tr>
+											<tr>
+												<td>LOAD_RPT_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing load report from LOAD_REPORTS.</td>
+											</tr>
+											<tr>
+												<td>MATCH_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing match.</td>
+											</tr>
+											<tr>
+												<td>P1</td>
+												<td>VARCHAR(30)</td>
+												<td>Player 1 Username.</td>
+											</tr>
+											<tr>
+												<td>P2</td>
+												<td>VARCHAR(30)</td>
+												<td>Player 2 Username.</td>
+											</tr>
+											<tr>
+												<td>P1_WINS</td>
+												<td>INT</td>
+												<td>Number of wins by Player 1.</td>
+											</tr>
+											<tr>
+												<td>P2_WINS</td>
+												<td>INT</td>
+												<td>Number of wins by Player 2.</td>
+											</tr>
+											<tr>
+												<td>MATCH_WINNER</td>
+												<td>VARCHAR(2)</td>
+												<td>Winner of match (P1 or P2).</td>
+											</tr>
+											<tr>
+												<td>P1_DECK_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing Player 1's deck information from VALID_DECKS.</td>
+											</tr>
+											<tr>
+												<td>P2_DECK_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing Player 2's deck information from VALID_DECKS.</td>
+											</tr>
+											<tr>
+												<td>P1_NOTE</td>
+												<td>VARCHAR(100)</td>
+												<td>Additional Notes for Player 1.</td>
+											</tr>
+											<tr>
+												<td>P2_NOTE</td>
+												<td>VARCHAR(100)</td>
+												<td>Additional Notes for Player 2.</td>
+											</tr>
+											<tr>
+												<td>EVENT_ID</td>
+												<td>BIGINT</td>
+												<td>Identifier referencing event information from EVENTS.</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which record was processed.</td>
+											</tr>
+											<tr>
+												<td>REJ_TYPE</td>
+												<td>VARCHAR(1)</td>
+												<td>Type of rejection. (W = Warning, E = Error)</td>
+											</tr>
+											<tr>
+												<td>MATCH_REJ_TEXT</td>
+												<td>VARCHAR(30)</td>
+												<td>Rejection reason text.</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>VALID_DECKS</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>FORMAT</td>
+												<td>VARCHAR(30)</td>
+												<td>Format of deck.</td>
+											</tr>
+											<tr>
+												<td>ARCHETYPE</td>
+												<td>VARCHAR(30)</td>
+												<td>Archetype of deck.</td>
+											</tr>
+											<tr>
+												<td>SUBARCHETYPE</td>
+												<td>VARCHAR(30)</td>
+												<td>Sub-archetype of the deck.</td>
+											</tr>
+											<tr>
+												<td>DECK_ID</td>
+												<td>BIGINT</td>
+												<td>Unique deck identifier.</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which record was processed.</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>VALID_EVENT_TYPES</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>FORMAT</td>
+												<td>VARCHAR(30)</td>
+												<td>Format played during event.</td>
+											</tr>
+											<tr>
+												<td>EVENT_TYPE</td>
+												<td>VARCHAR(30)</td>
+												<td>Type of event (e.g., CHALLENGE).</td>
+											</tr>
+											<tr>
+												<td>EVENT_TYPE_ID</td>
+												<td>BIGINT</td>
+												<td>Unique event type identifier.</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which record was processed.</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>LOAD_REPORTS</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>LOAD_RPT_ID</td>
+												<td>BIGINT</td>
+												<td>Unique load report identifier.</td>
+											</tr>
+											<tr>
+												<td>START_DATE</td>
+												<td>DATE</td>
+												<td>Start date of data being imported and processed.</td>
+											</tr>
+											<tr>
+												<td>END_DATE</td>
+												<td>DATE</td>
+												<td>End date of data being imported and processed.</td>
+											</tr>
+											<tr>
+												<td>RECORDS_FULL_DS</td>
+												<td>INT</td>
+												<td>Total records in full dataset.</td>
+											</tr>
+											<tr>
+												<td>RECORDS_TOTAL</td>
+												<td>INT</td>
+												<td>Total records attempted to process.</td>
+											</tr>
+											<tr>
+												<td>EVENTS_IGNORED</td>
+												<td>INT</td>
+												<td>Number of events ignored during processing.</td>
+											</tr>
+											<tr>
+												<td>RECORDS_PROC</td>
+												<td>INT</td>
+												<td>Number of records successfully processed.</td>
+											</tr>
+											<tr>
+												<td>MATCHES_DELETED</td>
+												<td>INT</td>
+												<td>Number of matches deleted.</td>
+											</tr>
+											<tr>
+												<td>MATCHES_PROC</td>
+												<td>INT</td>
+												<td>Number of matches processed.</td>
+											</tr>
+											<tr>
+												<td>MATCHES_SKIPPED</td>
+												<td>INT</td>
+												<td>Number of matches skipped.</td>
+											</tr>
+											<tr>
+												<td>EVENTS_DELETED</td>
+												<td>INT</td>
+												<td>Number of events deleted.</td>
+											</tr>
+											<tr>
+												<td>EVENTS_PROC</td>
+												<td>INT</td>
+												<td>Number of events processed.</td>
+											</tr>
+											<tr>
+												<td>EVENTS_SKIPPED</td>
+												<td>INT</td>
+												<td>Number of events skipped.</td>
+											</tr>
+											<tr>
+												<td>DB_CONN_ERROR_TEXT</td>
+												<td>VARCHAR(30)</td>
+												<td>Database connection error text (if any).</td>
+											</tr>
+											<tr>
+												<td>PROC_DT</td>
+												<td>TIMESTAMP</td>
+												<td>Time at which the record was processed.</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>API_LOGGING_STATS</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ID</td>
+												<td>SERIAL</td>
+												<td>Unique identifier for each log entry.</td>
+											</tr>
+											<tr>
+												<td>ENDPOINT</td>
+												<td>VARCHAR(100)</td>
+												<td>URL endpoint that was accessed.</td>
+											</tr>
+											<tr>
+												<td>METHOD</td>
+												<td>VARCHAR(100)</td>
+												<td>HTTP method (GET, POST, etc.) used in request.</td>
+											</tr>
+											<tr>
+												<td>QUERY_PARAMS</td>
+												<td>JSONB</td>
+												<td>Query parameters included in request.</td>
+											</tr>
+											<tr>
+												<td>STATUS_CODE</td>
+												<td>INT</td>
+												<td>HTTP status code returned by API (e.g., 200, 404, etc.).</td>
+											</tr>
+											<tr>
+												<td>CLIENT_IP</td>
+												<td>TEXT</td>
+												<td>IP address of client making request.</td>
+											</tr>
+											<tr>
+												<td>USER_AGENT</td>
+												<td>TEXT</td>
+												<td>User agent string from client (browser, OS information).</td>
+											</tr>
+											<tr>
+												<td>REQUEST_START</td>
+												<td>TIMESTAMP</td>
+												<td>Timestamp when request began processing.</td>
+											</tr>
+											<tr>
+												<td>REQUEST_END</td>
+												<td>TIMESTAMP</td>
+												<td>Timestamp when request finished processing.</td>
+											</tr>
+											<tr>
+												<td>RESPONSE_TIME_MS</td>
+												<td>DOUBLE PRECISION</td>
+												<td>Time to process request (milliseconds).</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../../index.html">Home</a></li>
+										<li>
+											<span class="opener">API.VintageData.IO</span>
+											<ul>
+												<li><a href="../vintagedata.html">Project Description</a></li>
+												<li><a href="datadictionary.html">Data Dictionary</a></li>
+												<li><a href="#">API Documentation</a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener"><b>MTGO-Tracker</b></span>
+											<ul>
+												<li><a href="../mtgotracker.html">Project Description</a></li>
+												<li><a href="#"><b>Getting Started</b></a></li>
+												<li><a href="#">Updating MTGO-Tracker</a></li>
+												<li><a href="#">Updating Auxiliary Files</a></li>
+												<li><a href="#">Data Dictionary</a></li>
+												<li><a href="#">Data Cleaning</a></li>
+												<li><a href="#">Data Viewing</a></li>
+												<li><a href="#">Dashboards</a></li>
+												<li><a href="#">Settings</a></li>
+												<li><a href="#">Saving and Exporting</a></li>
+											</ul>
+										</li>
+										<li><a href="">MTGO-DB</a></li>
+										<li>
+											<span class="opener">Data Analysis</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<!-- <li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2><a href="../resume.html">Resume</a></h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="../resume.html" class="image"><img src="../../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
+										</article>
+									</div>
+									<!-- <ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul> -->
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Contact</h2>
+									</header>
+									<!-- <p>XXX</p> -->
+									<ul class="contact">
+										<li class="icon solid fa-envelope">chriserickson [at] live [dot] com</li>
+										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+										<li class="icon solid fa-home">Orange County, CA</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Project Portfolio - cderickson. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
