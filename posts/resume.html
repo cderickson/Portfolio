@@ -215,7 +215,7 @@
 											</p>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" class="zoomable" onclick="openModal(this)" /></span>
 										</div>
 									</div>
 
@@ -257,7 +257,7 @@
 											</p>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" class="zoomable" onclick="openModal(this)" /></span>
 										</div>
 									</div>
 
@@ -414,6 +414,13 @@
 					modal.style.display = "block";
 					modalImg.src = imgElement.src;
 				}
+
+				// Close modal when clicking outside the image
+				document.getElementById("imageModal").addEventListener("click", function (event) {
+					if (event.target === this) {  // Check if clicked area is the modal itself (not the image)
+						closeModal();
+					}
+				});
 		
 				function closeModal() {
 					document.getElementById("imageModal").style.display = "none";
