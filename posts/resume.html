@@ -38,6 +38,14 @@
 				color: white;
 				cursor: pointer;
 			}
+			.zoomable {
+				cursor: pointer;
+				transition: transform 0.2s ease-in-out;
+			}
+
+			.zoomable:hover {
+				transform: scale(1.05);
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -263,22 +271,13 @@
 									</p>
 									<div class="row" style="display: flex; align-items: center;">
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" 
-												style="cursor: pointer; transition: transform 0.2s;" 
-												onmouseover="this.style.transform='scale(1.05)'" 
-												onmouseout="this.style.transform='scale(1)'" onclick="openModal(this)" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" class="zoomable" onclick="openModal(this)" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" 
-												style="cursor: pointer; transition: transform 0.2s;" 
-												onmouseover="this.style.transform='scale(1.05)'" 
-												onmouseout="this.style.transform='scale(1)'" onclick="openModal(this)" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" class="zoomable" onclick="openModal(this)" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" 
-												style="cursor: pointer; transition: transform 0.2s;" 
-												onmouseover="this.style.transform='scale(1.05)'" 
-												onmouseout="this.style.transform='scale(1)'" onclick="openModal(this)" /></span>
+											<span class="image fit"><img src="../images/pic03.jpg" alt="WWU" class="zoomable" onclick="openModal(this)" /></span>
 										</div>
 									</div>
 
