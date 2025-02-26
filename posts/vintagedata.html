@@ -60,7 +60,19 @@
 
 									<h2>Architecture</h2>
 									<p>This project is deployed in <b>AWS</b> using an <b>EC2</b> instance and <b>Amazon RDS</b> (<b>PostgreSQL</b>) database.</p>
-									<p>Google Sheets → Python ETL Script (EC2) → PostgreSQL (RDS) → REST API (EC2, Flask) → Nginx & Gunicorn → Users</p>
+									<div class="row" style="justify-content: center; display: flex; align-items: center;">
+										<div class="col-8 col-12-medium">
+											<span class="image fit"><img src="../images/vintagedata/arch.jpg" alt="Architecture"
+												style="object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+									</div>
+									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
+										<div class="col-4 col-12-medium">
+											<header class="major">
+												<h3 style="padding: 0; margin-bottom: 0">Architecture Diagram</h3>
+											</header>
+										</div>
+									</div>
 
 									<hr class="major" />
 
@@ -111,15 +123,26 @@
 										</table>
 									</div>
 									<br>
-									<p>See <b><u><a href="https://github.com/cderickson/Vintage-Metagame-API/wiki/Data-Dictionary">Data Dictionary</a></u></b> for feature definitions.</p>
+									<p>See <b><u><a href="vintagedata/datadictionary.html">Data Dictionary</a></u></b> for feature definitions.</p>
 
+									<div class="row" style="justify-content: center; display: flex; align-items: center;">
+										<div class="col-10 col-12-medium">
+											<span class="image fit"><img src="../images/vintagedata/erd.jpg" alt="ERD" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+									</div>
+									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
+										<div class="col-4 col-12-medium">
+											<header class="major">
+												<h3 style="padding: 0; margin-bottom: 0">Entity-Relationship Diagram (ERD)</h3>
+											</header>
+										</div>
+									</div>
+
+									<hr>
 									<h2>API Development</h2>
 									<p>A <b>REST API</b> was developed using <b>Flask</b> and deployed using an <b>EC2 instance</b>, which is configured to serve requests through <b>Nginx</b> and <b>Gunicorn</b>. The API provides HTTP endpoints for querying processed match results and event data.</p>
 									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Vintage-Metagame-Data/wiki/API-Documentation">API Documentation</a></u></b> for API Endpoint usage instructions.</p>
-									<div style="text-align: center;">
-										<span class="image object"><img src="../images/vintagedata/api1.jpg" alt="MTGO-DB" class="zoomable" onclick="openModal(this)" 
-											style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
-									</div>
 
 									<!-- Modal -->
 									<div id="imageModal" class="modal">
