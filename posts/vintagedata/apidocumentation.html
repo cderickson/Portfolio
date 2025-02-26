@@ -1,0 +1,614 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>API.VintageData.IO - API Documentation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>API.VintageData.IO</strong> by Chris Erickson</a>
+									<ul class="icons">
+										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/cderickson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.instagram.com/chriserickson04/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://old.reddit.com/user/Sundodger04/" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>API Documentation</h1>
+									</header>
+
+									<p>The <b><u>Vintage Data API</u></b> provides endpoints to retrieve match and event data from the MTGO Vintage Metagame dataset.
+										<ul>
+											<li>Requests are limited to <b>100 per minute</b>.</li>
+											<li>Response size is limited to <b>1000 rows</b>.</li>
+											<li>No authentication is required.</li>
+										</ul>
+										<b><u>Base URL</u></b>: https://api.vintagedata.io
+									</p>
+									<p>Back to <b><u><a href="../vintagedata.html">Project Description</a></u></b>.</p>
+
+									<hr>
+									<h2>Logging & Monitoring</h2>
+									<p>All requests are logged and inserted into the <b><u>API_LOGGING_STATS</u></b> table to track API Endpoint usage statistics.</p>
+									<p>See <b><u><a href="https://github.com/cderickson/Vintage-Metagame-API/wiki/Data-Dictionary">Data Dictionary</a></u></b> for more information.</p>
+
+									<hr>
+									<h2>Error Handling</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Status Code</th>
+												<th>Error Type</th>
+												<th>Error Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>400</b></td>
+												<td>Bad Request</td>
+												<td>Invalid query parameters.</td>
+											</tr>
+											<tr>
+												<td><b>404</b></td>
+												<td>Not Found</td>
+												<td>Requested resource does not exist.</td>
+											</tr>
+											<tr>
+												<td><b>500</b></td>
+												<td>Internal Server Error</td>
+												<td>Unexpected server error.</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>Example Requests</h2>
+									<pre><code>curl -X GET "https://api.vintagedata.io/matches/?start=2024-08-25&end=2024-10-30&page=1"
+curl -X GET "https://api.vintagedata.io/events/?start=2024-08-25&end=2024-10-30&page=1"
+curl -X GET "https://api.vintagedata.io/events/player/IamActuallyLvL1/"
+curl -X GET "https://api.vintagedata.io/load-reports/"</code></pre>
+
+									<hr>
+									<h1>API Endpoints</h1>
+									
+									<h2>GET /</h2>
+									<p>Redirects to the GitHub repository.</p>
+								
+									<hr>
+									<h2>GET /matches/</h2>
+									<p>Retrieves raw match data.</p>
+									<h3>Query Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>start</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>Start date (YYYY-MM-DD)</td>
+												<td>2024-08-25</td>
+											</tr>
+											<tr>
+												<td><b>end</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>End date (YYYY-MM-DD)</td>
+												<td>Current Date</td>
+											</tr>
+											<tr>
+												<td><b>page</b></td>
+												<td>Integer</td>
+												<td>Optional</td>
+												<td>Page number</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /matches/{match_id}/</h2>
+									<p>Retrieves a specific match by its <strong>match_id</strong>.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>match_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Match ID (11000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /matches/player/{player_id}/</h2>
+									<p>Retrieves all matches involving a specific player.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>match_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Match ID (11000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+									<h3>Query Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>start</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>Start date (YYYY-MM-DD)</td>
+												<td>2024-08-25</td>
+											</tr>
+											<tr>
+												<td><b>end</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>End date (YYYY-MM-DD)</td>
+												<td>Current Date</td>
+											</tr>
+											<tr>
+												<td><b>page</b></td>
+												<td>Integer</td>
+												<td>Optional</td>
+												<td>Page number</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /matches/event/{event_id}/</h2>
+									<p>Retrieves all matches from a specific event.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>event_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Event ID (12000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+								
+									<hr>
+									<h2>GET /events/</h2>
+									<p>Retrieves all events. Returns event details and total number of players per event.</p>
+									<h3>Query Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>start</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>Start date (YYYY-MM-DD)</td>
+												<td>2024-08-25</td>
+											</tr>
+											<tr>
+												<td><b>end</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>End date (YYYY-MM-DD)</td>
+												<td>Current Date</td>
+											</tr>
+											<tr>
+												<td><b>page</b></td>
+												<td>Integer</td>
+												<td>Optional</td>
+												<td>Page number</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /events/{event_id}/</h2>
+									<p>Retrieves event details by <strong>event_id</strong>.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>event_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Event ID (12000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+								
+									<hr>
+									<h2>GET /events/player/{P1}/</h2>
+									<p>Retrieves events played by a specific player (P1). Returns a JSON object containing event details, deck details, and win-loss record.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>P1</b></td>
+												<td>String</td>
+												<td>Required</td>
+												<td>Player identifier</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+									<h3>Query Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>start</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>Start date (YYYY-MM-DD)</td>
+												<td>2024-08-25</td>
+											</tr>
+											<tr>
+												<td><b>end</b></td>
+												<td>String</td>
+												<td>Optional</td>
+												<td>End date (YYYY-MM-DD)</td>
+												<td>Current Date</td>
+											</tr>
+											<tr>
+												<td><b>page</b></td>
+												<td>Integer</td>
+												<td>Optional</td>
+												<td>Page number</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /decks/</h2>
+									<p>Retrieves a list of all valid decks.</p>
+								
+									<hr>
+									<h2>GET /decks/{deck_id}/</h2>
+									<p>Retrieves details of a specific deck by deck_id.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>deck_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Unique deck identifier (13000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+								
+									<hr>
+									<h2>GET /event-types/</h2>
+									<p>Retrieves a list of valid event types (e.g. Challenge, Showcase, etc.).</p>
+								
+									<hr>
+									<h2>GET /event-types/{event_type_id}/</h2>
+									<p>Retrieves details of a specific event type by event_type_id.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>event_type_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Unique event type identifier (14000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /load-reports/</h2>
+									<p>Retrieves a list of all load reports. Load Reports contain statistics such as matches deleted, matches processed, matches skipped, etc.</p>
+
+									<hr>
+									<h2>GET /load-reports/{load_rpt_id}/</h2>
+									<p>Retrieves a specific load report using load_rpt_id.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>load_rpt_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Unique load report identifier (15000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /event-rejections/</h2>
+									<p>Retrieves a list of all event rejections. Event Rejections will contain the post-processed event data along with a <strong>Rejection Type</strong> and <strong>Rejection Reason Text</strong>.</p>
+
+									<hr>
+									<h2>GET /event-rejections/{load_rpt_id}/</h2>
+									<p>Retrieves event rejections for a specific load_rpt_id.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>load_rpt_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Unique load report identifier (15000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /match-rejections/</h2>
+									<p>Retrieves a list of all match rejections. Match Rejections will contain the post-processed event data along with a <strong>Rejection Type</strong> and <strong>Rejection Reason Text</strong>.</p>
+								
+									<hr>
+									<h2>GET /match-rejections/{load_rpt_id}/</h2>
+									<p>Retrieves match rejections for a specific load_rpt_id.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>load_rpt_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Unique load report identifier (15000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
+										<article>
+											<a href="../../index.html" class="image fit"><img src="../../images/icon.ico" alt="Icon" 
+												style="height: 100px; width: 100px; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
+										</article>
+									</div>
+
+									<header class="major">
+										<h2><a href="../../index.html">Home</a></h2>
+									</header>
+									<ul>
+										<li>
+											<span class="opener"><b>API.VintageData.IO</b></span>
+											<ul>
+												<li><a href="../../posts/vintagedata.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/vintagedata/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/vintagedata/apidocumentation.html"><b>API Documentation</b></a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener"><b>MTGO-Tracker</b></span>
+											<ul>
+												<li><a href="../../posts/mtgotracker.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/mtgotracker/gettingstarted.html"><b>Getting Started</b></a></li>
+												<li><a href="../../posts/mtgotracker/updating.html"><b>Updating MTGO-Tracker</b></a></li>
+												<li><a href="../../posts/mtgotracker/updatingaux.html"><b>Updating Auxiliary Files</b></a></li>
+												<li><a href="../../posts/mtgotracker/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/mtgotracker/datacleaning.html"><b>Data Cleaning</b></a></li>
+												<li><a href="../../posts/mtgotracker/dataviewing.html"><b>Data Viewing</b></a></li>
+												<li><a href="../../posts/mtgotracker/dashboards.html"><b>Dashboards</b></a></li>
+												<li><a href="../../posts/mtgotracker/settings.html"><b>Settings</b></a></li>
+												<li><a href="../../posts/mtgotracker/saving.html"><b>Saving and Exporting</b></a></li>
+											</ul>
+										</li>
+										<li><a href="../../posts/mtgodb.html"><b>MTGO-DB</b></a></li>
+										<li>
+											<span class="opener"><b>Data Analysis</b></span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<!-- <li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2><a href="../resume.html">Resume</a></h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="../resume.html" class="image"><img src="../../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
+										</article>
+									</div>
+									<!-- <ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul> -->
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Contact</h2>
+									</header>
+									<!-- <p>XXX</p> -->
+									<ul class="contact">
+										<li class="icon solid fa-envelope">chriserickson [at] live [dot] com</li>
+										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+										<li class="icon solid fa-home">Orange County, CA</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Project Portfolio - cderickson. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

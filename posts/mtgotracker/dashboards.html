@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>MTGO-Tracker</title>
+		<title>MTGO-Tracker - Dashboards</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -17,7 +17,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="../index.html" class="logo"><strong>MTGO-Tracker</strong> by Chris Erickson</a>
+									<a href="../../index.html" class="logo"><strong>MTGO-Tracker</strong> by Chris Erickson</a>
 									<ul class="icons">
 										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -30,32 +30,33 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>MTGO-Tracker</h1>
+										<h1>Dashboards</h1>
 									</header>
 
-									<span class="image main"><img src="../images/pic22.jpg" alt="" style="border: 3px solid black;" /></span>
+									<p>Back to <b><u><a href="../vintagedata.html">Project Description</a></u></b>.</p>
 
-									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Tracker">GitHub Repository</a></u></b>.</p>
-									<p>MTGO-Tracker is an <b><u>analytics tool</u></b> used to process raw data for Magic: the Gathering Online. Players can import and parse log files created during online play and store resulting information into a local database for self-analysis.</p>
-									<p>Five (5) tables are created:</p>
-									<ul>
-										<li>Matches</li>
-										<li>Games</li>
-										<li>Plays</li>
-										<li>Drafts</li>
-										<li>Draft Picks</li>
-									</ul>
-									<p>These tables will help you track your results, evaluate your performance, and analyze your play patterns.</p>
+									<hr>
+									<h3>Statistics Window</h3>
+									<p>The Statistics window will allow you to view dashboards showing descriptive statistics and basic analysis of your dataset.</p>
+									<p>Apply the <b><u>Hero</u></b> setting to activate the <b><u>Statistics button</u></b> in the left menu of the main window.</p>
+									
+									<hr>
+									<h3>Match History</h3>
+									<p><b><u>Match History</u></b> is the first dashboard shown and will display the results of your 30 most recent matches. It can be filtered by <b>Format</b> using the dropdown menu at the top of the window.</p>
+									<p>Choose a different dashboard to view (<b>Matches</b>, <b>Games</b>, <b>Plays</b>, <b>Opponents</b>, or <b>Cards</b>) using the top right dropdown menu.</p>
+									<p>After choosing a dashboard, the metrics shown can be filtered using the dropdown menus across the top of the window.</p>
 									<div style="text-align: center;">
-										<span class="image object"><img src="../images/mtgotracker/mtgotracker1.jpg" alt="MTGO-Tracker" class="zoomable" onclick="openModal(this)" 
+										<span class="image object"><img src="../../images/mtgotracker/matchhistory1.jpg" alt="Aux2" class="zoomable" onclick="openModal(this)" 
 											style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 									</div>
+									<hr>
 
 									<!-- Modal -->
 									<div id="imageModal" class="modal">
 										<span class="close" onclick="closeModal()">&times;</span>
 										<img class="modal-content" id="modalImg">
 									</div>
+									
 								</section>
 						</div>
 					</div>
@@ -68,39 +69,39 @@
 								<nav id="menu">
 									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
 										<article>
-											<a href="../index.html" class="image fit"><img src="../images/icon.ico" alt="Icon" 
+											<a href="../../index.html" class="image fit"><img src="../../images/icon.ico" alt="Icon" 
 												style="height: 100px; width: 100px; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
 										</article>
 									</div>
 
 									<header class="major">
-										<h2><a href="../index.html">Home</a></h2>
+										<h2><a href="../../index.html">Home</a></h2>
 									</header>
 									<ul>
 										<li>
 											<span class="opener"><b>API.VintageData.IO</b></span>
 											<ul>
-												<li><a href="../posts/vintagedata.html"><b>Project Description</b></a></li>
-												<li><a href="../posts/vintagedata/datadictionary.html"><b>Data Dictionary</b></a></li>
-												<li><a href="../posts/vintagedata/apidocumentation.html"><b>API Documentation</b></a></li>
+												<li><a href="../../posts/vintagedata.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/vintagedata/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/vintagedata/apidocumentation.html"><b>API Documentation</b></a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener"><b>MTGO-Tracker</b></span>
 											<ul>
-												<li><a href="../posts/mtgotracker.html"><b>Project Description</b></a></li>
-												<li><a href="../posts/mtgotracker/gettingstarted.html"><b>Getting Started</b></a></li>
-												<li><a href="../posts/mtgotracker/updating.html"><b>Updating MTGO-Tracker</b></a></li>
-												<li><a href="../posts/mtgotracker/updatingaux.html"><b>Updating Auxiliary Files</b></a></li>
-												<li><a href="../posts/mtgotracker/datadictionary.html"><b>Data Dictionary</b></a></li>
-												<li><a href="../posts/mtgotracker/datacleaning.html"><b>Data Cleaning</b></a></li>
-												<li><a href="../posts/mtgotracker/dataviewing.html"><b>Data Viewing</b></a></li>
-												<li><a href="../posts/mtgotracker/dashboards.html"><b>Dashboards</b></a></li>
-												<li><a href="../posts/mtgotracker/settings.html"><b>Settings</b></a></li>
-												<li><a href="../posts/mtgotracker/saving.html"><b>Saving and Exporting</b></a></li>
+												<li><a href="../../posts/mtgotracker.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/mtgotracker/gettingstarted.html"><b>Getting Started</b></a></li>
+												<li><a href="../../posts/mtgotracker/updating.html"><b>Updating MTGO-Tracker</b></a></li>
+												<li><a href="../../posts/mtgotracker/updatingaux.html"><b>Updating Auxiliary Files</b></a></li>
+												<li><a href="../../posts/mtgotracker/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/mtgotracker/datacleaning.html"><b>Data Cleaning</b></a></li>
+												<li><a href="../../posts/mtgotracker/dataviewing.html"><b>Data Viewing</b></a></li>
+												<li><a href="../../posts/mtgotracker/dashboards.html"><b>Dashboards</b></a></li>
+												<li><a href="../../posts/mtgotracker/settings.html"><b>Settings</b></a></li>
+												<li><a href="../../posts/mtgotracker/saving.html"><b>Saving and Exporting</b></a></li>
 											</ul>
 										</li>
-										<li><a href="../posts/mtgodb.html"><b>MTGO-DB</b></a></li>
+										<li><a href="../../posts/mtgodb.html"><b>MTGO-DB</b></a></li>
 										<li>
 											<span class="opener"><b>Data Analysis</b></span>
 											<ul>
@@ -116,11 +117,11 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2><a href="resume.html">Resume</a></h2>
+										<h2><a href="../resume.html">Resume</a></h2>
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="resume.html" class="image"><img src="../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
+											<a href="../resume.html" class="image"><img src="../../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
 										</article>
 									</div>
 									<!-- <ul class="actions">
@@ -152,11 +153,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
 
 	</body>
 </html>

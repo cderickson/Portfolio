@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MTGO-Tracker - Data Cleaning Methods</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>MTGO-Tracker</strong> by Chris Erickson</a>
+									<ul class="icons">
+										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/cderickson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.instagram.com/chriserickson04/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://old.reddit.com/user/Sundodger04/" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Data Cleaning Methods</h1>
+									</header>
+
+									<p>Some columns have associated helper functions to assist with data cleaning.</p>
+									<p>However, some column attributes (Deck Archetype, Match Format, Match Type) can not be derived from GameLog files and must be revised manually using either <b>Missing Match Data</b> or <b>Revise Record(s)</b>.</p>
+									<p>Back to <b><u><a href="../vintagedata.html">Project Description</a></u></b>.</p>
+									
+									<hr>
+									<h2>Missing Match Data</h2>
+									<p><b>Data → Input Missing Match Data</b></p>
+									<ul>
+										<li>Matches import with empty <b>P1/P2_Arch</b>, <b>P1/P2_Subarch</b>, <b>(Limited)_Format</b>, <b>Match_Type</b> columns by default.</li>
+										<li>Cycle through Matches with empty columns and manually fill them in.</li>
+									</ul>
+
+									<hr>
+									<h2>Missing Game_Winner</h2>
+									<p><b>Data → Input Missing Game_Winner Data</b></p>
+									<ul>
+										<li>The <b>Games.Game_Winner</b> column will be set to NA if the game's winner could not be determined.</li>
+										<li>Cycle through affected Games and manually select a <b>Game_Winner</b> based on trailing Game Actions.</li>
+										<li>All tables will be automatically updated accordingly.</li>
+									</ul>
+
+									<hr>
+									<h2>Best Guess Deck Names</h2>
+									<p><b>Data → Apply Best Guess for Deck Names</b></p>
+									<ul>
+										<li>The <b>Matches.P1/P2_Subarch</b> columns will be set to NA by default after importing.</li>
+										<li>Import sample decklists and apply best guess deck names in the <b>Matches.P1/P2_Subarch</b> columns.</li>
+										<li>Sample decklists from YYYY-MM to YYYY-MM are included and will be updated at the end of every month.</li>
+										<li>Clicking <b>Apply to All</b> will overwrite any existing <b>P1/P2_Subarch</b> values.</li>
+										<li>Click <b>Apply to Unknowns</b> if you do not wish to overwrite your previous changes to these columns.</li>
+										<li>Matches with Format set to Draft/Sealed/Cube will have deck name set to colors played (eg. WU/RG/etc.)</li>
+									</ul>
+
+									<hr>
+									<h2>Associated Draft_IDs</h2>
+									<p><b>Data → Apply Associated Draft_IDs to Limited Matches</b></p>
+									<ul>
+										<li>Choose whether to cycle through all Limited Matches or only those with <b>Draft_ID</b> set to NA.</li>
+										<li>This will cycle through Matches that have been set to Booster Draft or Cube.</li>
+										<li>The cards played will be compared against cards picked in each Draft to find <b>Applicable Draft_IDs</b>.</li>
+										<li>Choose from the list of <b>Applicable Draft_IDs</b> to apply the <b>Draft_ID</b> to the Match.</li>
+										<li>Match results will automatically be applied to the match result columns in the Drafts Table.</li>
+									</ul>
+
+									<hr>
+									<h2>Revise Record(s) Button</h2>
+									<ul>
+										<li>Selected row(s) in the Matches table can be manually revised.</li>
+										<li>If multiple rows are selected, the revision will apply to all selected rows.</li>
+										<li>This is only applicable to rows in the Matches or Drafts tables.</li>
+									</ul>
+
+									<hr>
+									<h2>Remove Record(s) Button</h2>
+									<ul>
+										<li>Selected row(s) in the Matches table can be removed from your database.</li>
+										<li>All associated Games and Plays data will also be removed.</li>
+										<li>Removed Matches can be ignored, meaning they will not be included in future imports.</li>
+										<li>This is only applicable to rows in the Matches or Drafts tables.</li>
+									</ul>
+
+									<hr>
+									<h2>Input Options File</h2>
+									<ul>
+										<li>Control the dropdown menu options available when making revisions.</li>
+										<li>Add or delete options under their respective header.</li>
+										<li>Each option MUST be on its own line.</li>
+										<li>Do not alter the pre-existing headers in this file.</li>
+									</ul>
+									<hr>
+									
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
+										<article>
+											<a href="../../index.html" class="image fit"><img src="../../images/icon.ico" alt="Icon" 
+												style="height: 100px; width: 100px; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
+										</article>
+									</div>
+
+									<header class="major">
+										<h2><a href="../../index.html">Home</a></h2>
+									</header>
+									<ul>
+										<li>
+											<span class="opener"><b>API.VintageData.IO</b></span>
+											<ul>
+												<li><a href="../../posts/vintagedata.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/vintagedata/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/vintagedata/apidocumentation.html"><b>API Documentation</b></a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener"><b>MTGO-Tracker</b></span>
+											<ul>
+												<li><a href="../../posts/mtgotracker.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/mtgotracker/gettingstarted.html"><b>Getting Started</b></a></li>
+												<li><a href="../../posts/mtgotracker/updating.html"><b>Updating MTGO-Tracker</b></a></li>
+												<li><a href="../../posts/mtgotracker/updatingaux.html"><b>Updating Auxiliary Files</b></a></li>
+												<li><a href="../../posts/mtgotracker/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/mtgotracker/datacleaning.html"><b>Data Cleaning</b></a></li>
+												<li><a href="../../posts/mtgotracker/dataviewing.html"><b>Data Viewing</b></a></li>
+												<li><a href="../../posts/mtgotracker/dashboards.html"><b>Dashboards</b></a></li>
+												<li><a href="../../posts/mtgotracker/settings.html"><b>Settings</b></a></li>
+												<li><a href="../../posts/mtgotracker/saving.html"><b>Saving and Exporting</b></a></li>
+											</ul>
+										</li>
+										<li><a href="../../posts/mtgodb.html"><b>MTGO-DB</b></a></li>
+										<li>
+											<span class="opener"><b>Data Analysis</b></span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<!-- <li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2><a href="../resume.html">Resume</a></h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="../resume.html" class="image"><img src="../../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
+										</article>
+									</div>
+									<!-- <ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul> -->
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Contact</h2>
+									</header>
+									<!-- <p>XXX</p> -->
+									<ul class="contact">
+										<li class="icon solid fa-envelope">chriserickson [at] live [dot] com</li>
+										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+										<li class="icon solid fa-home">Orange County, CA</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Project Portfolio - cderickson. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

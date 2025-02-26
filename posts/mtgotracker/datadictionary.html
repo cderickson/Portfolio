@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MTGO-Tracker - Data Dictionary</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>MTGO-Tracker</strong> by Chris Erickson</a>
+									<ul class="icons">
+										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/cderickson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.instagram.com/chriserickson04/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://old.reddit.com/user/Sundodger04/" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Data Dictionary</h1>
+									</header>
+
+									<p>Back to <b><u><a href="../vintagedata.html">Project Description</a></u></b>.</p>
+									<hr>
+									<h2>Matches</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>Match_ID</b></td>
+												<td>String</td>
+												<td>Unique match identifier.</td>
+											</tr>
+											<tr>
+												<td><b>P1</b></td>
+												<td>String</td>
+												<td>Player 1 Username</td>
+											</tr>
+											<tr>
+												<td><b>P1_Arch</b></td>
+												<td>String</td>
+												<td>Player 1 Deck Archetype (eg. Aggro/Control/etc.)</td>
+											</tr>
+											<tr>
+												<td><b>P1_Subarch</b></td>
+												<td>String</td>
+												<td>Player 1 Deckname</td>
+											</tr>
+											<tr>
+												<td><b>P2</b></td>
+												<td>String</td>
+												<td>Player 1 Username</td>
+											</tr>
+											<tr>
+												<td><b>P2_Arch</b></td>
+												<td>String</td>
+												<td>Player 2 Deck Archetype (eg. Aggro/Control/etc.)</td>
+											</tr>
+											<tr>
+												<td><b>P2_Subarch</b></td>
+												<td>String</td>
+												<td>Player 2 Deckname</td>
+											</tr>
+											<tr>
+												<td><b>P1_Roll</b></td>
+												<td>Integer</td>
+												<td>Player 1 Die Roll</td>
+											</tr>
+											<tr>
+												<td><b>P2_Roll</b></td>
+												<td>Integer</td>
+												<td>Player 2 Die Roll</td>
+											</tr>
+											<tr>
+												<td><b>Roll_Winner</b></td>
+												<td>String</td>
+												<td>Die Roll Winner</td>
+											</tr>
+											<tr>
+												<td><b>P1_Wins</b></td>
+												<td>Integer</td>
+												<td>Player 1 Game Wins</td>
+											</tr>
+											<tr>
+												<td><b>P2_Wins</b></td>
+												<td>Integer</td>
+												<td>Player 2 Game Wins</td>
+											</tr>
+											<tr>
+												<td><b>Match_Winner</b></td>
+												<td>String</td>
+												<td>Winner of the match</td>
+											</tr>
+											<tr>
+												<td><b>Format</b></td>
+												<td>String</td>
+												<td>Match Format Played</td>
+											</tr>
+											<tr>
+												<td><b>Limited_Format</b></td>
+												<td>String</td>
+												<td>Limited Format Played ('NA' if Constructed Match)</td>
+											</tr>
+											<tr>
+												<td><b>Match_Type</b></td>
+												<td>String</td>
+												<td>MTGO Match Type (eg. League/Challenge)</td>
+											</tr>
+											<tr>
+												<td><b>Date</b></td>
+												<td>Datetime</td>
+												<td>Date/Time at Start of Match: YYYY-MM-DD-HH-MM</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<h2>Games</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>Match_ID</b></td>
+												<td>String</td>
+												<td>Unique match identifier.</td>
+											</tr>
+											<tr>
+												<td><b>P1</b></td>
+												<td>String</td>
+												<td>Player 1 Username</td>
+											</tr>
+											<tr>
+												<td><b>P2</b></td>
+												<td>String</td>
+												<td>Player 1 Username</td>
+											</tr>
+											<tr>
+												<td><b>Game_Num</b></td>
+												<td>Integer</td>
+												<td>Game number of match (1, 2, 3)</td>
+											</tr>
+											<tr>
+												<td><b>PD_Selector</b></td>
+												<td>String</td>
+												<td>Player with Choice of Play/Draw</td>
+											</tr>
+											<tr>
+												<td><b>PD_Choice</b></td>
+												<td>String</td>
+												<td>Play/Draw Selection</td>
+											</tr>
+											<tr>
+												<td><b>On_Play</b></td>
+												<td>String</td>
+												<td>On-The-Play Player</td>
+											</tr>
+											<tr>
+												<td><b>On_Draw</b></td>
+												<td>String</td>
+												<td>On-The-Draw Player</td>
+											</tr>
+											<tr>
+												<td><b>P1_Mulls</b></td>
+												<td>Integer</td>
+												<td>Mulligans by Player 1</td>
+											</tr>
+											<tr>
+												<td><b>P2_Mulls</b></td>
+												<td>Integer</td>
+												<td>Mulligans by Player 2</td>
+											</tr>
+											<tr>
+												<td><b>Turns</b></td>
+												<td>Integer</td>
+												<td>Total Turns in Game</td>
+											</tr>
+											<tr>
+												<td><b>Game_Winner</b></td>
+												<td>String</td>
+												<td>Player that won the game</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<h2>Plays</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>Match_ID</b></td>
+												<td>String</td>
+												<td>Unique match identifier.</td>
+											</tr>
+											<tr>
+												<td><b>Game_Num</b></td>
+												<td>Integer</td>
+												<td>Game number of match (1, 2, 3)</td>
+											</tr>
+											<tr>
+												<td><b>Play_Num</b></td>
+												<td>Integer</td>
+												<td>Play number of game</td>
+											</tr>
+											<tr>
+												<td><b>Turn_Num</b></td>
+												<td>Integer</td>
+												<td>Turn number of game</td>
+											</tr>
+											<tr>
+												<td><b>Casting_Player</b></td>
+												<td>String</td>
+												<td>Player Committing Game Action</td>
+											</tr>
+											<tr>
+												<td><b>Action</b></td>
+												<td>String</td>
+												<td>Game Action ('Land Drop', 'Casts', 'Triggers', 'Activated Ability', 'Draws', 'Attacks')</td>
+											</tr>
+											<tr>
+												<td><b>Primary_Card</b></td>
+												<td>String</td>
+												<td>Card Being Cast/Played/Triggered/etc.</td>
+											</tr>
+											<tr>
+												<td><b>Target1</b></td>
+												<td>String</td>
+												<td>Target Card #1 of Primary Card (NA if No Targeted Cards)</td>
+											</tr>
+											<tr>
+												<td><b>Target2</b></td>
+												<td>String</td>
+												<td>Target Card #2 of Primary Card (NA if No Targeted Cards)</td>
+											</tr>
+											<tr>
+												<td><b>Target3</b></td>
+												<td>String</td>
+												<td>Target Card #3 of Primary Card (NA if No Targeted Cards)</td>
+											</tr>
+											<tr>
+												<td><b>Opp_Target</b></td>
+												<td>Bool (1 or 0)</td>
+												<td>1 if Current Action is Targetting Opponent</td>
+											</tr>
+											<tr>
+												<td><b>Self_Target</b></td>
+												<td>Bool (1 or 0)</td>
+												<td>1 if Current Action is Self-Targetting</td>
+											</tr>
+											<tr>
+												<td><b>Cards_Drawn</b></td>
+												<td>Integer</td>
+												<td>Total Cards Drawn (Current Action)</td>
+											</tr>
+											<tr>
+												<td><b>Attackers</b></td>
+												<td>Integer</td>
+												<td>Total Attackers (Current Action)</td>
+											</tr>
+											<tr>
+												<td><b>Active_Player</b></td>
+												<td>String</td>
+												<td>Active Player</td>
+											</tr>
+											<tr>
+												<td><b>Nonactive_Player</b></td>
+												<td>String</td>
+												<td>Nonactive Player</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<h2>Drafts</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>Draft_ID</b></td>
+												<td>String</td>
+												<td>Unique draft identifier.</td>
+											</tr>
+											<tr>
+												<td><b>Hero</b></td>
+												<td>String</td>
+												<td>Username of Drafting Player</td>
+											</tr>
+											<tr>
+												<td><b>Player_1-8</b></td>
+												<td>String</td>
+												<td>Username(s) of other drafters.</td>
+											</tr>
+											<tr>
+												<td><b>Match_Wins</b></td>
+												<td>Integer</td>
+												<td>Hero Match Wins</td>
+											</tr>
+											<tr>
+												<td><b>Match_Losses</b></td>
+												<td>Integer</td>
+												<td>Hero Match Losses</td>
+											</tr>
+											<tr>
+												<td><b>Format</b></td>
+												<td>String</td>
+												<td>Draft Format Played</td>
+											</tr>
+											<tr>
+												<td><b>Date</b></td>
+												<td>Datetime</td>
+												<td>Date/Time at Start of Draft: YYYY-MM-DD-HH-MM</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<h2>Draft Picks</h2>
+									<table>
+										<thead>
+											<tr>
+												<th>Column Name</th>
+												<th>Data Type</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>Draft_ID</b></td>
+												<td>String</td>
+												<td>Unique draft identifier.</td>
+											</tr>
+											<tr>
+												<td><b>Card</b></td>
+												<td>String</td>
+												<td>Selected/Drafted Card</td>
+											</tr>
+											<tr>
+												<td><b>Pack_Num</b></td>
+												<td>Integer</td>
+												<td>Pack of the Current Draft</td>
+											</tr>
+											<tr>
+												<td><b>Pick_Num</b></td>
+												<td>Integer</td>
+												<td>Pick of the Current Pack</td>
+											</tr>
+											<tr>
+												<td><b>Pick_Ovr</b></td>
+												<td>Integer</td>
+												<td>Overall Pick of the Draft</td>
+											</tr>
+											<tr>
+												<td><b>Avail_1-14</b></td>
+												<td>String</td>
+												<td>Other Available Cards During Pick</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
+										<article>
+											<a href="../../index.html" class="image fit"><img src="../../images/icon.ico" alt="Icon" 
+												style="height: 100px; width: 100px; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
+										</article>
+									</div>
+
+									<header class="major">
+										<h2><a href="../../index.html">Home</a></h2>
+									</header>
+									<ul>
+										<li>
+											<span class="opener"><b>API.VintageData.IO</b></span>
+											<ul>
+												<li><a href="../../posts/vintagedata.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/vintagedata/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/vintagedata/apidocumentation.html"><b>API Documentation</b></a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener"><b>MTGO-Tracker</b></span>
+											<ul>
+												<li><a href="../../posts/mtgotracker.html"><b>Project Description</b></a></li>
+												<li><a href="../../posts/mtgotracker/gettingstarted.html"><b>Getting Started</b></a></li>
+												<li><a href="../../posts/mtgotracker/updating.html"><b>Updating MTGO-Tracker</b></a></li>
+												<li><a href="../../posts/mtgotracker/updatingaux.html"><b>Updating Auxiliary Files</b></a></li>
+												<li><a href="../../posts/mtgotracker/datadictionary.html"><b>Data Dictionary</b></a></li>
+												<li><a href="../../posts/mtgotracker/datacleaning.html"><b>Data Cleaning</b></a></li>
+												<li><a href="../../posts/mtgotracker/dataviewing.html"><b>Data Viewing</b></a></li>
+												<li><a href="../../posts/mtgotracker/dashboards.html"><b>Dashboards</b></a></li>
+												<li><a href="../../posts/mtgotracker/settings.html"><b>Settings</b></a></li>
+												<li><a href="../../posts/mtgotracker/saving.html"><b>Saving and Exporting</b></a></li>
+											</ul>
+										</li>
+										<li><a href="../../posts/mtgodb.html"><b>MTGO-DB</b></a></li>
+										<li>
+											<span class="opener"><b>Data Analysis</b></span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<!-- <li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2><a href="../resume.html">Resume</a></h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="../resume.html" class="image"><img src="../../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
+										</article>
+									</div>
+									<!-- <ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul> -->
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Contact</h2>
+									</header>
+									<!-- <p>XXX</p> -->
+									<ul class="contact">
+										<li class="icon solid fa-envelope">chriserickson [at] live [dot] com</li>
+										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+										<li class="icon solid fa-home">Orange County, CA</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Project Portfolio - cderickson. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

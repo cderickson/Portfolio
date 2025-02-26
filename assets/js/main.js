@@ -260,3 +260,22 @@
 			});
 
 })(jQuery);
+
+function openModal(imgElement) {
+	let modal = document.getElementById("imageModal");
+	let modalImg = document.getElementById("modalImg");
+
+	modal.style.display = "block";
+	modalImg.src = imgElement.src;
+}
+
+// Close modal when clicking outside the image
+document.getElementById("imageModal").addEventListener("click", function (event) {
+	if (event.target === this) {  // Check if clicked area is the modal itself (not the image)
+		closeModal();
+	}
+});
+
+function closeModal() {
+	document.getElementById("imageModal").style.display = "none";
+}

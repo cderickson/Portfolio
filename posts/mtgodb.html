@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>MTGO-Tracker</title>
+		<title>MTGO-DB - Project Description</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -17,7 +17,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="../index.html" class="logo"><strong>MTGO-Tracker</strong> by Chris Erickson</a>
+									<a href="../index.html" class="logo"><strong>MTGO-DB</strong> by Chris Erickson</a>
 									<ul class="icons">
 										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -30,25 +30,77 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>MTGO-Tracker</h1>
+										<h1>MTGO-DB</h1>
 									</header>
 
-									<span class="image main"><img src="../images/pic22.jpg" alt="" style="border: 3px solid black;" /></span>
+									<span class="image main"><img src="../images/pic33.jpg" alt="" style="border: 3px solid black;" /></span>
 
-									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Tracker">GitHub Repository</a></u></b>.</p>
-									<p>MTGO-Tracker is an <b><u>analytics tool</u></b> used to process raw data for Magic: the Gathering Online. Players can import and parse log files created during online play and store resulting information into a local database for self-analysis.</p>
-									<p>Five (5) tables are created:</p>
-									<ul>
-										<li>Matches</li>
-										<li>Games</li>
-										<li>Plays</li>
-										<li>Drafts</li>
-										<li>Draft Picks</li>
-									</ul>
-									<p>These tables will help you track your results, evaluate your performance, and analyze your play patterns.</p>
-									<div style="text-align: center;">
-										<span class="image object"><img src="../images/mtgotracker/mtgotracker1.jpg" alt="MTGO-Tracker" class="zoomable" onclick="openModal(this)" 
-											style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+									<p>MTGO-DB is a cloud-based data ingestion tool used to process raw data for Magic: the Gathering Online.</p>
+									<p>Players can upload and process raw data files created during online play. The processed data is then loaded and stored in a PostgreSQL database, after which users can clean and enhance their own records. Data is presented to the user in the form of tables and dashboards which help players track their results, evaluate their performance, and analyze their play patterns.</p>
+									<p>Head to the <b><u><a href="https://github.com/cderickson/MTGO-DB">Getting Started</a></u></b> page for step-by-step instructions showing you how to load, clean, and view your data.</p>
+									<p>See <b><u><a href="https://github.com/cderickson/MTGO-DB">GitHub Repository</a></u></b>.</p>
+
+									<hr class="major" />
+
+									<h2>Goals</h2>
+									<p>The first goal of the <b>MTGO-DB</b> project is to create a feature-rich replacement for the spreadsheets that many players use to track their match history by automating as much of the process as possible.</p>
+									<p>The second is to give players a whole new type of data to explore by generating a database of play-level records. Unlocking this method of examining player performance and playstyle will provide a new avenue for MTG statistical analysis, data-informed content, and decision-making.</p>
+
+									
+									<div class="row" style="justify-content: left; display: flex; align-items: center; text-align: center;">
+										<div class="col-4 col-12-medium">
+											<header class="major">
+												<h3 style="padding: 0; margin-bottom: 10px">Match History</h3>
+											</header>
+										</div>
+										<div class="col-8 col-12-medium">
+											<header class="major">
+												<h3 style="padding: 0; margin-bottom: 10px">Detailed Entries</h3>
+											</header>
+										</div>
+									</div>
+
+									<div class="row" style="justify-content: left; display: flex; align-items: center;">
+										<div class="col-4 col-12-medium">
+											<span class="image fit"><img src="../images/mtgodb/mtgodb5.jpg" alt="Match History" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+										<div class="col-4 col-12-medium">
+											<span class="image fit"><img src="../images/mtgodb/mtgodb3.jpg" alt="Match History" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+										<div class="col-4 col-12-medium">
+											<span class="image fit"><img src="../images/mtgodb/mtgodb2.jpg" alt="Match History" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+									</div>
+
+									<div class="row" style="justify-content: left; display: flex; align-items: center; text-align: center;">
+										<div class="col-8 col-12-medium">
+											<header class="major">
+												<h3 style="padding: 0; margin-bottom: 10px">Performance and Card Statistics</h3>
+											</header>
+										</div>
+										<div class="col-4 col-12-medium">
+											<header class="major">
+												<h3 style="padding: 0; margin-bottom: 10px">Play-By-Play Data</h3>
+											</header>
+										</div>
+									</div>
+									
+									<div class="row" style="justify-content: left; display: flex; align-items: center;">
+										<div class="col-4 col-12-medium">
+											<span class="image fit"><img src="../images/mtgodb/mtgodb1.jpg" alt="Match History" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+										<div class="col-4 col-12-medium">
+											<span class="image fit"><img src="../images/mtgodb/mtgodb6.jpg" alt="Match History" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
+										<div class="col-4 col-12-medium">
+											<span class="image fit"><img src="../images/mtgodb/mtgodb4.jpg" alt="Match History" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
+										</div>
 									</div>
 
 									<!-- Modal -->
@@ -56,6 +108,7 @@
 										<span class="close" onclick="closeModal()">&times;</span>
 										<img class="modal-content" id="modalImg">
 									</div>
+
 								</section>
 						</div>
 					</div>
