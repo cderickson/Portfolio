@@ -35,21 +35,54 @@
 
 									<span class="image main"><img src="../images/pic22.jpg" alt="" style="border: 3px solid black;" /></span>
 
-									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Tracker">GitHub Repository</a></u></b>.</p>
+									<h2>Overview</h2>
 									<p>MTGO-Tracker is an <b><u>analytics tool</u></b> used to process raw data for Magic: the Gathering Online. Players can import and parse log files created during online play and store resulting information into a local database for self-analysis.</p>
-									<p>Five (5) tables are created:</p>
-									<ul>
-										<li>Matches</li>
-										<li>Games</li>
-										<li>Plays</li>
-										<li>Drafts</li>
-										<li>Draft Picks</li>
-									</ul>
-									<p>These tables will help you track your results, evaluate your performance, and analyze your play patterns.</p>
+									<p>See <b><u><a href="https://github.com/cderickson/MTGO-Tracker">GitHub Repository</a></u></b>.</p>
+									
+									<hr>
+									<p>
+										<b><u>Processed data</u></b> is stored in five (5) tables:<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Matches<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Games<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plays<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drafts<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft Picks
+									</p>
+									<p>This data will help you track your results, evaluate your performance, and analyze your play patterns.</p>
+									<p>Built-in dashboards are included to view and track <b><u>Match History (Overall or by Format)</u></b>, <b><u>Match History vs. Opponent</u></b>, <b><u>Match/Game Performance Data</u></b>, <b><u>Play Pattern Data</u></b>, and <b><u>Card Data</u></b>.</p>
+									<p>Generated tables can be <b><u>exported</u></b> to .csv or .xlsx to allow you to manipulate the data yourself, run your own queries and build your own visualizations.</p>
 									<div style="text-align: center;">
-										<span class="image object"><img src="../images/mtgotracker/mtgotracker1.jpg" alt="MTGO-Tracker" class="zoomable" onclick="openModal(this)" 
+										<span class="image object"><img src="../images/mtgotracker/mtgotracker1.jpg" alt="MTGO-Tracker" 
 											style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 									</div>
+
+									<hr>
+									<h2>Limitations</h2>
+									<p><b>Importing</b>: Some data (e.g. Deck Names, Match Format) cannot be read from GameLog files explicitly. These columns import as NA by default and are input manually by the user.</p>
+									<p><b>Deck Names</b>: Included is a tool to set best guess deck names by comparing card data with MTG Goldfish decklists, but this is not always accurate. Card data is saved for every match to assist with data entry for old matches.</p>
+									<p><b>Outdated</b> GameLogs: My test data includes my own personal data from January 2021 to current. Older files may have been formatted differently and may not import correctly. (For example, I know formatting changed when the London Mulligan was implemented in July 2019)</p>
+
+									<hr>
+									<h2>Release History</h2>
+									<p>
+										<b>MTGO-Tracker-v.16 (Oct 2023)</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v.16">Change Log</a></u></b>, <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/download/v.16/MTGO-Tracker-v.16.rar">Download</a></u></b><br>
+										<b>MTGO-Tracker-v.15</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v.15">Change Log</a></u></b><br>
+										<b>MTGO-Tracker-v.14</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v.14">Change Log</a></u></b><br>
+										<b>MTGO-Tracker-v.13</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v.13">Change Log</a></u></b><br>
+										<b>MTGO-Tracker-v.12</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v.12">Change Log</a></u></b><br>
+										<b>MTGO-Tracker-v.4.0</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v.4.0">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.3.2</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.3.2">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.3.1</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.3.1">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.3.0</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.3.0">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.2.0</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.2.0">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.1.2</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.1.2">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.1.1</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.1.1">Change Log</a></u></b><br>
+										<b>MTGO-Tracker 2022-v.1.0</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/2022-v.1.0">Change Log</a></u></b><br>
+										<b>MTGO-Tracker v.1.0.2</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v1.0.2">Change Log</a></u></b><br>
+										<b>MTGO-Tracker v.1.0.1</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v1.0.1">Change Log</a></u></b><br>
+										<b>MTGO-Tracker v.1.0.0</b> - <b><u><a href="https://github.com/cderickson/MTGO-Tracker/releases/tag/v1.0.0">Change Log</a></u></b>
+									</p>
+									<br>
 
 									<!-- Modal -->
 									<div id="imageModal" class="modal">
@@ -104,10 +137,7 @@
 										<li>
 											<span class="opener"><b>Data Analysis</b></span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<!-- <li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li> -->
+												<li><a href="wowarenatbc.html"><b>World of Warcraft - ArenaStats TBC</b></a></li>
 											</ul>
 										</li>
 									</ul>
@@ -118,11 +148,19 @@
 									<header class="major">
 										<h2><a href="resume.html">Resume</a></h2>
 									</header>
-									<div class="mini-posts">
+									
+									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
+										<article>
+											<a href="resume.html" class="image fit"><img src="../images/resumeicon.jpg" alt="Resume" 
+												style="height: 100px; width: 100%; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
+										</article>
+									</div>
+
+									<!-- <div class="mini-posts">
 										<article>
 											<a href="resume.html" class="image"><img src="../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
 										</article>
-									</div>
+									</div> -->
 									<!-- <ul class="actions">
 										<li><a href="#" class="button">More</a></li>
 									</ul> -->
