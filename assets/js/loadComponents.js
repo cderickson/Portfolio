@@ -1,5 +1,5 @@
 window.onload = function () {
-    let cachedHeader = localStorage.getItem("header");
+    let cachedHeader = localStorage.getItem("header-template");
     let cachedSidebar = localStorage.getItem("sidebar");
 
     if (cachedHeader && cachedSidebar) {
@@ -12,10 +12,10 @@ window.onload = function () {
             fetch("/components/sidebar.html").then(response => response.text())
         ])
         .then(([headerData, sidebarData]) => {
-            console.log("Fetched header:", headerData);
+            console.log("Fetched header-template:", headerData);
             console.log("Fetched sidebar:", sidebarData);
             
-            localStorage.setItem("header", headerData);
+            localStorage.setItem("header-template", headerData);
             localStorage.setItem("sidebar", sidebarData);
             insertComponents(headerData, sidebarData);
         })
@@ -25,10 +25,10 @@ window.onload = function () {
 
 function insertComponents(headerData, sidebarData) {
     if (document.querySelector("#header-template")) {
-        console.log("Inserting header content...");
-        document.querySelector("#header").innerHTML = headerData;
+        console.log("Inserting header-template content...");
+        document.querySelector("#header-template").innerHTML = headerData;
     } else {
-        console.error("Header element not found!");
+        console.error("header-template element not found!");
     }
 
     if (document.querySelector("#sidebar")) {
