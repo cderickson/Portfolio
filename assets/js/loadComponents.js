@@ -28,4 +28,10 @@ function loadMainJS() {
     script.src = "/assets/js/main.js";
     script.defer = true;
     document.body.appendChild(script);
+
+    console.log("Loading main.js...");
+    let script2 = document.createElement("script");
+    script.src = "/assets/js/util.js";
+    script.defer = true;
+    document.body.appendChild(script);
 }
