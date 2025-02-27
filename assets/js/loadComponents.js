@@ -5,7 +5,7 @@ window.onload = function () {
         fetch("/components/header.html?v=" + new Date().getTime()).then(response => response.text()),
         fetch("/components/sidebar.html?v=" + new Date().getTime()),
     ])
-    .then(([headerData, sidebarData, navbarData]) => {
+    .then(([headerData, sidebarData]) => {
         console.log("Fetched components successfully");
 
         insertComponents(headerData, sidebarData);
@@ -14,7 +14,7 @@ window.onload = function () {
     .catch(error => console.error("Error loading components:", error));
 };
 
-function insertComponents(headerData, sidebarData, navbarData) {
+function insertComponents(headerData, sidebarData) {
     if (document.querySelector("#header-template")) {
         document.querySelector("#header-template").innerHTML = headerData;
     }
