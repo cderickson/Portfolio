@@ -3,8 +3,8 @@ window.onload = function () {
 
     // Force fresh fetch instead of using local storage
     Promise.all([
-        fetch("components/header.html?v=" + new Date().getTime()).then(response => response.text()),
-        fetch("components/sidebar.html?v=" + new Date().getTime()).then(response => response.text())
+        fetch("/components/header.html?v=" + new Date().getTime()).then(response => response.text()),
+        fetch("/components/sidebar.html?v=" + new Date().getTime()).then(response => response.text())
     ])
     .then(([headerData, sidebarData]) => {
         console.log("Fetched header:", headerData);
