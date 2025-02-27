@@ -3,13 +3,18 @@ window.onload = function () {
     let cachedSidebar = localStorage.getItem("sidebar");
 
     if (cachedHeader && cachedSidebar) {
+        console.log("Using cached components");
         insertComponents(cachedHeader, cachedSidebar);
     } else {
+        console.log("Fetching components...");
         Promise.all([
-            fetch("/components/header.html").then(response => response.text()),
-            fetch("/components/sidebar.html").then(response => response.text())
+            fetch("components/header.html").then(response => response.text()),
+            fetch("components/sidebar.html").then(response => response.text())
         ])
         .then(([headerData, sidebarData]) => {
+            console.log("Fetched header:", headerData);
+            console.log("Fetched sidebar:", sidebarData);
+            
             localStorage.setItem("header", headerData);
             localStorage.setItem("sidebar", sidebarData);
             insertComponents(headerData, sidebarData);
@@ -19,13 +24,17 @@ window.onload = function () {
 };
 
 function insertComponents(headerData, sidebarData) {
-    const headerElement = document.querySelector("#header");
-    const sidebarElement = document.querySelector("#sidebar");
-
-    if (headerElement) {
-        headerElement.innerHTML = headerData; // Replaces only the inner content of <header id="header">
+    if (document.querySelector("#header")) {
+        console.log("Inserting header content...");
+        document.querySelector("#header").innerHTML = headerData;
+    } else {
+        console.error("Header element not found!");
     }
-    if (sidebarElement) {
-        sidebarElement.innerHTML = sidebarData; // Replaces only the inner content of <div id="sidebar">
+
+    if (document.querySelector("#sidebar")) {
+        console.log("Inserting sidebar content...");
+        document.querySelector("#sidebar").innerHTML = sidebarData;
+    } else {
+        console.error("Sidebar element not found!");
     }
 }
