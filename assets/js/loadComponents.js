@@ -24,7 +24,7 @@ window.onload = function () {
 };
 
 function insertComponents(headerData, sidebarData) {
-    if (document.querySelector("#header")) {
+    if (document.querySelector("#header-template")) {
         console.log("Inserting header content...");
         document.querySelector("#header").innerHTML = headerData;
     } else {
