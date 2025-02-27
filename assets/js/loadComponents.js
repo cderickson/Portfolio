@@ -8,8 +8,8 @@ window.onload = function () {
     } else {
         console.log("Fetching components...");
         Promise.all([
-            fetch("components/header.html").then(response => response.text()),
-            fetch("components/sidebar.html").then(response => response.text())
+            fetch("/components/header.html").then(response => response.text()),
+            fetch("/components/sidebar.html").then(response => response.text())
         ])
         .then(([headerData, sidebarData]) => {
             console.log("Fetched header:", headerData);
