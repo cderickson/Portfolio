@@ -4,8 +4,8 @@
 		<title>Data Analysis - World of Warcraft TBC Arena</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="shortcut icon" href="../images/icon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../_assets/css/main.css" />
+		<link rel="shortcut icon" href="../../_images/icon.ico" type="image/x-icon">
 	</head>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ1346J84C"></script>
@@ -27,7 +27,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="../index.html" class="logo"><strong>Data Analysis</strong> by Chris Erickson</a>
+									<a href="../../" class="logo"><strong>Data Analysis</strong> by Chris Erickson</a>
 									<ul class="icons">
 										<li><a href="https://x.com/Sundodger04" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://www.linkedin.com/in/cderickson04/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -46,7 +46,7 @@
 									<h2>Problem</h2>
 									<p>The World of Warcraft ArenaStats add-on lets players track their Arena (2v2/3v3/5v5 player-vs-player matches) results automatically. This tool is fan-created and not natively supported, thus it is prone to occasional errors when recording results. Can we clean the exported data to get a usable dataset?</p>
 									<div style="text-align: center;">
-										<span class="image object"><img src="../images/wow/wow1.jpg" alt="WoW1" 
+										<span class="image object"><img src="_images/wow1.jpg" alt="WoW1" 
 											style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 									</div>
 									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
@@ -59,10 +59,10 @@
 
 									<hr>
 									<h2>Data Collection & Data Cleansing</h2>
-									<p>- <b><u><a href="">Jupyter Notebook - Python</a></u></b></p>
+									<p>- <b><u><a href="https://github.com/cderickson/Jupyter-Notebooks/blob/main/2022-04-05-arenastats-tbc-data-cleaning.ipynb">TBC Arena Stats - Data CleaningJupyter Notebook - Python</a></u></b> - <b>Jupyter Notebook – Python</b></p>
 									<p>The most common errors with ArenaStats are duplicated matches and a <b>ghost player</b> error, where a player from the previous match will be duplicated in the record for the following match (so three players would be listed where there were only two). Duplicate matches are easy enough to filter out, but ghost players are more difficult to determine and rely on player race-class-faction combinations to be distinct between matches. If the two matches feature characters with similar race, class, and/or faction, the ghost player might not be able to be determined and the match will have to be dropped from the dataset.</p>
 									<div style="text-align: center;">
-										<span class="image object"><img src="../images/wow/wow2.jpg" alt="WOW-TBC2" 
+										<span class="image object"><img src="_images/wow2.jpg" alt="WOW-TBC2" 
 											style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 									</div>
 									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
@@ -93,7 +93,7 @@
 
 									<div class="row" style="justify-content: center; display: flex; align-items: center;">
 										<div class="col-10 col-12-medium">
-											<span class="image fit"><img src="../images/wow/wow3.jpg" alt="WoW3" 
+											<span class="image fit"><img src="_images/wow3.jpg" alt="WoW3" 
 												style="height: 100%; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 										</div>
 									</div>
@@ -109,44 +109,44 @@
 									<h2>Data Visualizations</h2>
 									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
 										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/priest-rogue-matchups-s3.jpg" alt="WoW-Viz1" class="zoomable" onclick="openModal(this)" 
+											<span class="image object"><img src="_images/priest-rogue-matchups-s3.jpg" alt="WoW-Viz1" class="zoomable" onclick="openModal(this)" 
 												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/tbc-rating-scatter.jpg" alt="WoW-Viz2" class="zoomable" onclick="openModal(this)" 
+											<span class="image object"><img src="_images/tbc-rating-scatter.jpg" alt="WoW-Viz2" class="zoomable" onclick="openModal(this)" 
 												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
 										</div>
 										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/tbc-arena-winrate-delta.jpg" alt="WoW-Viz3" class="zoomable" onclick="openModal(this)" 
-												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
-										</div>
-									</div>
-
-									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
-										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/arena-s3-match-duration-histogram.jpg" alt="WoW-Viz4" class="zoomable" onclick="openModal(this)" 
-												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
-										</div>
-										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/arena-s3-match-duration-kde-fill.jpg" alt="WoW-Viz5" class="zoomable" onclick="openModal(this)" 
-												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
-										</div>
-										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/arena-s3-match-duration-kde-layer.jpg" alt="WoW-Viz6" class="zoomable" onclick="openModal(this)" 
+											<span class="image object"><img src="_images/tbc-arena-winrate-delta.jpg" alt="WoW-Viz3" class="zoomable" onclick="openModal(this)" 
 												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
 										</div>
 									</div>
 
 									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
 										<div class="col-4 col-12-medium">
-											<span class="image object"><img src="../images/wow/arena-s3-match-duration-regression.jpg" alt="WoW-Viz7" class="zoomable" onclick="openModal(this)" 
+											<span class="image object"><img src="_images/arena-s3-match-duration-histogram.jpg" alt="WoW-Viz4" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
+										</div>
+										<div class="col-4 col-12-medium">
+											<span class="image object"><img src="_images/arena-s3-match-duration-kde-fill.jpg" alt="WoW-Viz5" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
+										</div>
+										<div class="col-4 col-12-medium">
+											<span class="image object"><img src="_images/arena-s3-match-duration-kde-layer.jpg" alt="WoW-Viz6" class="zoomable" onclick="openModal(this)" 
+												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black; margin-bottom: 10px;" /></span>
+										</div>
+									</div>
+
+									<div class="row" style="justify-content: center; display: flex; align-items: center; text-align: center;">
+										<div class="col-4 col-12-medium">
+											<span class="image object"><img src="_images/arena-s3-match-duration-regression.jpg" alt="WoW-Viz7" class="zoomable" onclick="openModal(this)" 
 												style="height: 225px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 										</div>
 									</div>
 									<br>
 									<p>
-										- <b><u><a href="">TBC Arena Matchups, Season 3, Rogue-Priest</a></u></b> - <b>Jupyter Notebook – R</b><br>
-										- <b><u><a href="">TBC Arena Season 3, Rogue-Priest, Distribution of Match Durations</a></u></b> - <b>Jupyter Notebook – Python</b>
+										- <b><u><a href="https://github.com/cderickson/Jupyter-Notebooks/blob/main/2022-04-07-arenastats-tbc-matchups.ipynb">TBC Arena Matchups, Season 3, Rogue-Priest</a></u></b> - <b>Jupyter Notebook – R</b><br>
+										- <b><u><a href="https://github.com/cderickson/Jupyter-Notebooks/blob/main/2022-05-18-arenastats-tbc-match-duration-distributions.ipynb">TBC Arena Season 3, Rogue-Priest, Distribution of Match Durations</a></u></b> - <b>Jupyter Notebook – Python</b>
 									</p>
 
 									<!-- Modal -->
@@ -167,43 +167,43 @@
 								<nav id="menu">
 									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
 										<article>
-											<a href="../index.html" class="image fit"><img src="../images/icon.ico" alt="Icon" 
+											<a href="../../" class="image fit"><img src="../../_images/icon.ico" alt="Icon" 
 												style="height: 100px; width: 100px; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
 										</article>
 									</div>
 
 									<header class="major">
-										<h2><a href="../index.html">Home</a></h2>
+										<h2><a href="../../">Home</a></h2>
 									</header>
 									<ul>
 										<li>
 											<span class="opener"><b>API.VintageData.IO</b></span>
 											<ul>
-												<li><a href="../posts/vintagedata.html"><b>Project Description</b></a></li>
-												<li><a href="../posts/vintagedata/datadictionary.html"><b>Data Dictionary</b></a></li>
-												<li><a href="../posts/vintagedata/apidocumentation.html"><b>API Documentation</b></a></li>
+												<li><a href="../../vintage-data/"><b>Project Description</b></a></li>
+												<li><a href="../../vintage-data/data-dictionary/"><b>Data Dictionary</b></a></li>
+												<li><a href="../../vintage-data/api-documentation/"><b>API Documentation</b></a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener"><b>MTGO-Tracker</b></span>
 											<ul>
-												<li><a href="../posts/mtgotracker.html"><b>Project Description</b></a></li>
-												<li><a href="../posts/mtgotracker/gettingstarted.html"><b>Getting Started</b></a></li>
-												<li><a href="../posts/mtgotracker/updating.html"><b>Updating MTGO-Tracker</b></a></li>
-												<li><a href="../posts/mtgotracker/updatingaux.html"><b>Updating Auxiliary Files</b></a></li>
-												<li><a href="../posts/mtgotracker/datadictionary.html"><b>Data Dictionary</b></a></li>
-												<li><a href="../posts/mtgotracker/datacleaning.html"><b>Data Cleaning</b></a></li>
-												<li><a href="../posts/mtgotracker/dataviewing.html"><b>Data Viewing</b></a></li>
-												<li><a href="../posts/mtgotracker/dashboards.html"><b>Dashboards</b></a></li>
-												<li><a href="../posts/mtgotracker/settings.html"><b>Settings</b></a></li>
-												<li><a href="../posts/mtgotracker/saving.html"><b>Saving and Exporting</b></a></li>
+												<li><a href="../../mtgo-tracker/"><b>Project Description</b></a></li>
+												<li><a href="../../mtgo-tracker/getting-started/"><b>Getting Started</b></a></li>
+												<li><a href="../../mtgo-tracker/updating/"><b>Updating MTGO-Tracker</b></a></li>
+												<li><a href="../../mtgo-tracker/updating-aux/"><b>Updating Auxiliary Files</b></a></li>
+												<li><a href="../../mtgo-tracker/data-dictionary/"><b>Data Dictionary</b></a></li>
+												<li><a href="../../mtgo-tracker/data-cleaning/"><b>Data Cleaning</b></a></li>
+												<li><a href="../../mtgo-tracker/data-viewing/"><b>Data Viewing</b></a></li>
+												<li><a href="../../mtgo-tracker/dashboards/"><b>Dashboards</b></a></li>
+												<li><a href="../../mtgo-tracker/settings/"><b>Settings</b></a></li>
+												<li><a href="../../mtgo-tracker/saving/"><b>Saving and Exporting</b></a></li>
 											</ul>
 										</li>
-										<li><a href="../posts/mtgodb.html"><b>MTGO-DB</b></a></li>
+										<li><a href="../../mtgo-db/"><b>MTGO-DB.com</b></a></li>
 										<li>
 											<span class="opener"><b>Data Analysis</b></span>
 											<ul>
-												<li><a href="wowarenatbc.html"><b>World of Warcraft - ArenaStats TBC</b></a></li>
+												<li><a href="../wow-arena-tbc/"><b>World of Warcraft - ArenaStats TBC</b></a></li>
 											</ul>
 										</li>
 									</ul>
@@ -212,19 +212,19 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2><a href="resume.html">Resume</a></h2>
+										<h2><a href="../../resume/">Resume</a></h2>
 									</header>
 									
 									<div class="mini-posts" style="display: flex; justify-content: center; align-items: center;">
 										<article>
-											<a href="resume.html" class="image fit"><img src="../images/resumeicon.jpg" alt="Resume" 
+											<a href="../../resume/" class="image fit"><img src="../../_images/resumeicon.jpg" alt="Resume" 
 												style="height: 100px; width: 100%; object-fit: cover; transition: none !important; transform: none !important; border: 3px solid black;"/></a>
 										</article>
 									</div>
 
 									<!-- <div class="mini-posts">
 										<article>
-											<a href="resume.html" class="image"><img src="../images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
+											<a href="resume.html" class="image"><img src="../_images/pic12.jpg" alt="Selfie" style="border: 3px solid black;"/></a>
 										</article>
 									</div> -->
 									<!-- <ul class="actions">
@@ -256,11 +256,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="../../_assets/js/jquery.min.js"></script>
+			<script src="../../_assets/js/browser.min.js"></script>
+			<script src="../../_assets/js/breakpoints.min.js"></script>
+			<script src="../../_assets/js/util.js"></script>
+			<script src="../../_assets/js/main.js"></script>
 
 	</body>
 </html>
