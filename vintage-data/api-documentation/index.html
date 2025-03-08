@@ -312,6 +312,86 @@ curl -X GET "https://api.vintagedata.io/load-reports/"</code></pre>
 											</tr>
 										</tbody>
 									</table>
+
+									<hr>
+									<h2>GET /events/{event_id}/standings/</h2>
+									<p>Retrieves event standings by <strong>event_id</strong>.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>event_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Event ID (12000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
+									<h3>Query Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>rank</b></td>
+												<td>Integer</td>
+												<td>Optional</td>
+												<td>Search for a player of a specific rank.</td>
+												<td>0 (full standings)</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+									<h2>GET /events/{event_id}/player/{P1}/</h2>
+									<p>Retrieves event rank and record for a specific player (<strong>P1</strong>) by <strong>event_id</strong>.</p>
+									<h3>URL Parameter(s):</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter Name</th>
+												<th>Data Type</th>
+												<th>Requirement</th>
+												<th>Description</th>
+												<th>Default Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><b>event_id</b></td>
+												<td>Integer</td>
+												<td>Required</td>
+												<td>Event ID (12000000000)</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td><b>P1</b></td>
+												<td>String</td>
+												<td>Required</td>
+												<td>Player identifier</td>
+												<td>NA</td>
+											</tr>
+										</tbody>
+									</table>
 								
 									<hr>
 									<h2>GET /events/player/{P1}/</h2>
