@@ -45,8 +45,11 @@
 
 									<p>The <b><u>Vintage Data API</u></b> provides endpoints to retrieve match and event data from the MTGO Vintage Metagame dataset.
 										<ul>
-											<li>Requests are limited to <b>100 per minute</b>.</li>
-											<li>Response size is limited to <b>1000 rows</b> per request.</li>
+											<li>Requests are rate-limited to <b>100 per minute</b>.</li>
+											<li>Response size is limited to <b>1000 rows</b>.</li>
+												<ul>
+													<li>Requests with more than 1000 rows will be <b>paginated</b>.</li>
+												</ul>
 											<li>No authentication is required.</li>
 										</ul>
 										<b><u>Base URL</u></b>: https://api.vintagedata.io
