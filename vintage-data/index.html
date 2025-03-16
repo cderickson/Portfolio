@@ -56,9 +56,10 @@
 										<li><b><u>Clean & Transform</u></b> tournament results, matchups, and deck information.</li>
 										<li><b><u>Load</u></b> structured data into a PostgreSQL database.</li>
 										<li><b><u>Deploy</u></b> a public REST API for querying match results and event information.</li>
+										<li><b><u>Present</u></b> data to users with a Power BI dashboard visualizing metagame trends, player leaderboards, and deck matchup statistics.</li>
 									</ul>
 
-									<p>The ETL code is stored as a <b>Python</b> script and scheduled to run weekly using <b>cron</b> on an <b>EC2 instance</b>. The script pulls data from a public Google Sheet, cleans and transforms it, and then loads it into a <b>PostgreSQL</b> database hosted on <b>Amazon RDS</b>.</p>
+									<p>The ETL code is stored as <b>Python</b> scripts and scheduled to run weekly using <b>cron</b> on an <b>EC2 instance</b>. These scripts pull data from a public Google Sheet, clean and transform it, and then load it into a <b>PostgreSQL</b> database hosted on <b>Amazon RDS</b>.</p>
 
 									<hr class="major" />
 
@@ -171,8 +172,9 @@
 											<li><strong>Deck Matchup Heatmap</strong> – Visualization of win rates between different deck archetypes.</li>
 										</ul>
 									</p>
+									<br>
 									<div class="row" style="justify-content: center; display: flex; align-items: center;">
-										<div class="col-10 col-12-medium">
+										<div class="col-12 col-12-medium">
 											<span class="image fit"><img src="_images/powerbi.jpg" alt="Power BI" class="zoomable" onclick="openModal(this)" 
 												style="height: 600px; width: 100%; object-fit: cover; border: 3px solid black;" /></span>
 										</div>
