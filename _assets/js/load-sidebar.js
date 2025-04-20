@@ -18,12 +18,45 @@ function loadSidebar() {
             const wrapper = document.getElementById('wrapper');
             if (wrapper) {
                 wrapper.insertAdjacentHTML('afterbegin', xhr.responseText);
+                
+                // Initialize the menu functionality after sidebar is loaded
+                initializeMenu();
             }
         }
     };
     
     // Send the request
     xhr.send();
+}
+
+// Function to initialize menu functionality
+function initializeMenu() {
+    // Get all menu openers
+    const openers = document.querySelectorAll('#menu .opener');
+    
+    // Add click event listeners to each opener
+    openers.forEach(opener => {
+        opener.addEventListener('click', function() {
+            // Toggle the 'active' class on the opener
+            this.classList.toggle('active');
+            
+            // Get the next sibling (the ul element)
+            const submenu = this.nextElementSibling;
+            
+            // Toggle the display of the submenu
+            if (submenu.style.display === 'none') {
+                submenu.style.display = 'block';
+            } else {
+                submenu.style.display = 'none';
+            }
+        });
+        
+        // Initially hide all submenus
+        const submenu = opener.nextElementSibling;
+        if (submenu) {
+            submenu.style.display = 'none';
+        }
+    });
 }
 
 // Load the sidebar when the page loads
